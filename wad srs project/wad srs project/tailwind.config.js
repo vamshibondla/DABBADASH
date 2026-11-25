@@ -1,0 +1,66 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+      },
+      colors: {
+        slate: {
+          50: 'var(--dd-ivory)',
+          100: 'var(--dd-blush-soft)',
+          200: 'var(--dd-taupe)',
+          300: '#c4b4a4',
+          400: '#786e64',
+          500: '#6d635b',
+          600: '#5f554c',
+          700: '#49413b',
+          800: 'var(--dd-olive-deep)',
+          900: 'var(--dd-olive)',
+          950: 'var(--dd-espresso)',
+        },
+        gray: {
+          50: 'var(--dd-ivory)',
+          100: 'var(--dd-blush-soft)',
+          200: 'var(--dd-taupe)',
+          300: '#c4b4a4',
+          400: '#786e64',
+          500: '#6d635b',
+          600: '#5f554c',
+          700: '#49413b',
+          800: '#3b3632',
+          900: 'var(--dd-espresso)',
+        },
+        violet: {
+          50: 'var(--dd-blush-soft)',
+          100: 'var(--dd-blush)',
+          200: '#e0adb5',
+          300: '#c98292',
+          400: '#a65e73',
+          500: '#873e56',
+          600: 'var(--dd-burgundy)',
+          700: 'var(--dd-burgundy-deep)',
+          800: '#542031',
+          900: 'var(--dd-espresso)',
+        },
+        brand: {
+          50: 'var(--dd-blush-soft)',
+          100: 'var(--dd-blush)',
+          200: '#e0adb5',
+          300: '#c98292',
+          400: '#a65e73',
+          500: '#873e56',
+          600: 'var(--dd-burgundy)',
+          700: 'var(--dd-burgundy-deep)',
+          800: '#542031',
+          900: 'var(--dd-espresso)',
+        },
+      },
+    },
+  },
+  plugins: [],
+}

@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --dd-olive: #596344;
+  --dd-olive-deep: #454e36;
+  --dd-burgundy: #702d43;
+  --dd-burgundy-deep: #5e2538;
+  --dd-blush: #ebc8cd;
+  --dd-blush-soft: #f6e8e9;
+  --dd-ivory: #f8f4ef;
+  --dd-taupe: #d7c8b8;
+  --dd-espresso: #302c2b;
+  --dd-muted: #6d635b;
+  --dd-sidebar-muted: #f5ede7;
+}
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-gray-50 text-gray-900 antialiased;
+    min-width: 320px;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--dd-burgundy);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      scroll-behavior: auto !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  @layer utilities {
+    .text-slate-900,
+    .text-gray-900 {
+      color: var(--dd-espresso);
+    }
+
+    .text-slate-800,
+    .text-gray-800 {
+      color: #3b3632;
+    }
+  }
+
+  #primary-navigation .text-slate-400,
+  #primary-navigation .text-slate-500,
+  #primary-navigation .text-slate-600 {
+    color: var(--dd-sidebar-muted);
+  }
+
+  #primary-navigation button[aria-current='page'] {
+    background-color: var(--dd-blush);
+    background-image: none;
+    color: var(--dd-espresso);
+    box-shadow: 0 6px 16px rgb(48 44 43 / 12%);
+  }
+
+  #primary-navigation button[aria-current='page'] svg {
+    color: var(--dd-burgundy);
+  }
+
+  #primary-navigation button[aria-current='page'] > span:nth-child(2) {
+    background-color: var(--dd-burgundy);
+    color: var(--dd-ivory);
+  }
+
+  #primary-navigation nav button:not([aria-current='page']) > span:nth-child(2) {
+    background-color: var(--dd-blush);
+    color: var(--dd-espresso);
+  }
+
+  #primary-navigation .bg-gradient-to-br,
+  .bg-gradient-to-br,
+  .bg-gradient-to-r {
+    background-image: linear-gradient(135deg, var(--dd-burgundy), var(--dd-blush));
+  }
+
+  .recharts-cartesian-grid line,
+  .recharts-cartesian-axis-line,
+  .recharts-cartesian-axis-tick-line {
+    stroke: var(--dd-taupe) !important;
+  }
+
+  .recharts-cartesian-axis-tick text {
+    fill: var(--dd-muted) !important;
+  }
+
+  .recharts-bar-rectangle .recharts-rectangle {
+    fill: var(--dd-burgundy);
+  }
+
+  #main-content [aria-label='Interactive simulated delivery map'] {
+    background: linear-gradient(135deg, var(--dd-olive-deep), var(--dd-olive), var(--dd-olive-deep)) !important;
+  }
+
+  #main-content [aria-label='Interactive simulated delivery map'] > svg:nth-of-type(2) line {
+    stroke: var(--dd-taupe) !important;
+  }
+}
